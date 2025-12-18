@@ -78,7 +78,7 @@ const Footer = () => {
                 color: "#DDDDDD",
               }}
             >
-              Copyright © 2023 Catalyst Studio. All rights reserved.
+              Copyright © 2025 Epixaa . All rights reserved.
             </span>
 
             {/* SOCIAL ICONS */}
