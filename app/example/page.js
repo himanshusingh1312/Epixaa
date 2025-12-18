@@ -26,7 +26,7 @@ const Example = () => {
   ];
 
   return (
-   <section className="relative w-full py-16 overflow-hidden">
+   <section className="relative w-full py-16 overflow-hidden"  id="examples">
   {/* NOISE BACKGROUND */}
   <div
     className="absolute inset-0"

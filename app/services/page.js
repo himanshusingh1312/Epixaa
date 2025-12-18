@@ -19,7 +19,7 @@ const Services = () => {
   return (
     <>
       {/* TOP BAR */}
-      <section
+      <section id="services"
       data-aos="fade-up"
         className="w-full flex items-center"
         style={{

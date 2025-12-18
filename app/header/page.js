@@ -1,9 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
-// AOS
+import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FiMenu, FiX, FiPhone } from "react-icons/fi"; // Hamburger & Phone Icons
+import { FiMenu, FiX, FiPhone } from "react-icons/fi";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +14,6 @@ const Header = () => {
       once: false,
       offset: 80,
     });
-
     AOS.refresh();
   }, []);
 
@@ -27,55 +25,53 @@ const Header = () => {
           data-aos="fade-up"
         >
           {/* LOGO */}
-          <div className="text-2xl sm:text-3xl font-semibold text-[#9DFF50]">
+          <a href="/" className="text-2xl sm:text-3xl font-semibold text-[#9DFF50]">
             Epixaa
-          </div>
+          </a>
 
-          {/* NAV LINKS for md and above */}
+          {/* NAV LINKS (Desktop) */}
           <nav className="hidden md:flex items-center gap-8">
-            {["Home", "Services", "About"].map((link) => (
-              <a
-                key={link}
-                href="#"
-                className="text-sm lg:text-lg text-white hover:text-[#9DFF50] transition"
-              >
-                {link}
-              </a>
-            ))}
+            <a href="/" className="text-white hover:text-[#9DFF50] transition">
+              Home
+            </a>
+            <a href="#services" className="text-white hover:text-[#9DFF50] transition">
+              Services
+            </a>
+            <a href="#examples" className="text-white hover:text-[#9DFF50] transition">
+              Projects
+            </a>
           </nav>
 
-          {/* CONTACT BUTTON for md and above */}
-          <button className="hidden md:flex items-center gap-2 rounded-full bg-[#9DFF50] px-4 sm:px-6 py-2 text-sm sm:text-base font-medium text-black hover:opacity-90 transition">
-            <FiPhone className="text-white" /> Contact Us
+          {/* CONTACT BUTTON (Desktop) */}
+          <button className="hidden md:flex items-center gap-2 rounded-full bg-[#9DFF50] px-6 py-2 text-black font-medium hover:opacity-90 transition">
+            <FiPhone className="text-black" /> Contact Us
           </button>
 
-          {/* Hamburger Menu for small screens */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white text-2xl focus:outline-none"
-            >
-              {isOpen ? <FiX /> : <FiMenu />}
-            </button>
-          </div>
+          {/* HAMBURGER */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-white text-2xl"
+          >
+            {isOpen ? <FiX /> : <FiMenu />}
+          </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* MOBILE MENU */}
         {isOpen && (
-          <div className="md:hidden mt-2 px-6 py-4 bg-gray-700 rounded-2xl flex flex-col gap-4">
-            {["Home", "Services", "About"].map((link) => (
-              <a
-                key={link}
-                href="#"
-                className="text-white text-base hover:text-[#9DFF50] transition"
-              >
-                {link}
-              </a>
-            ))}
-           <button className="flex items-center gap-2 rounded-full bg-[#9DFF50] px-4 py-2 text-black text-base font-medium hover:opacity-90 transition">
-  <FiPhone className="text-black" /> Contact Us
-</button>
+          <div className="md:hidden mt-3 px-6 py-4 bg-gray-700 rounded-2xl flex flex-col gap-4">
+            <a href="/" onClick={() => setIsOpen(false)} className="text-white">
+              Home
+            </a>
+            <a href="#services" onClick={() => setIsOpen(false)} className="text-white">
+              Services
+            </a>
+            <a href="#examples" onClick={() => setIsOpen(false)} className="text-white">
+              Projects
+            </a>
 
+            <button className="flex items-center gap-2 rounded-full bg-[#9DFF50] px-4 py-2 text-black font-medium">
+              <FiPhone /> Contact Us
+            </button>
           </div>
         )}
       </div>
