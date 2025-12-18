@@ -51,14 +51,14 @@ const Hire = () => {
 
         {/* BUTTONS */}
         <div
-          className="my-10 flex items-center justify-center gap-6"
+          className="sm:my-10 my-8 flex items-center justify-center sm:gap-6 gap-4"
           data-aos="fade-up"
         >
-          <button className="rounded-full bg-[#84CF29] px-10 lg:py-4 sm:py-3 py-2 text-white font-semibold hover:opacity-90 transition">
+          <button className="rounded-full bg-[#84CF29] xl:text-xl lg:text-lg sm:text-md text-sm md:px-10 sm:px-8 px-6 lg:py-4 md:py-3 sm:py-2 py-1.5 text-white font-semibold hover:opacity-90 transition">
             Hire Us
           </button>
 
-          <button className="rounded-full border border-[#010205] lg:py-4 sm:py-3 py-2 px-10  font-semibold text-[#010205] hover:bg-[#010205] hover:text-white transition">
+          <button className="rounded-full border border-[#010205] xl:text-xl lg:text-lg sm:text-md text-sm md:px-10 sm:px-8 px-6  lg:py-4 md:py-3 sm:py-2 py-1.5  font-semibold text-[#010205] hover:bg-[#010205] hover:text-white transition">
             Schedule Call
           </button>
         </div>
